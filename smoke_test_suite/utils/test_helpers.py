@@ -145,14 +145,23 @@ class SmokeTestHelper:
             post_content = self.config.TEST_POST["content"]
         
         try:
-            # First ensure we're logged in
-            login_result = self.login_test_user()
-            if not login_result["success"]:
+            # Always register a fresh user to avoid clashes and ensure authenticated session
+            unique_suffix = str(int(time.time()))
+            user_data = self.config.TEST_USER.copy()
+            user_data["username"] = f"postuser_{unique_suffix}"
+            user_data["email"] = f"postuser_{unique_suffix}@example.com"
+
+            reg_result = self.register_test_user(user_data)
+            if not reg_result.get("success"):
+                logger.warning(f"Auto-registration for post user failed: {reg_result.get('error')}")
+
+            login_result = self.login_test_user(user_data)
+            if not login_result.get("success"):
                 return {
                     "success": False,
-                    "error": "Could not login before creating post"
+                    "error": "Could not login with freshly registered user"
                 }
-            
+
             # Get the home page to access post form
             home_page = self.session.get(f"{self.config.BASE_URL}/")
             if home_page.status_code != 200:
@@ -160,33 +169,23 @@ class SmokeTestHelper:
                     "success": False,
                     "error": f"Home page inaccessible: {home_page.status_code}"
                 }
-            
-            post_data = {
-                "post": post_content,
-                "submit": "Submit"
-            }
-            
+
+            post_data = {"post": post_content, "submit": "Submit"}
             response = self.session.post(
-                f"{self.config.BASE_URL}/",
-                data=post_data,
-                allow_redirects=False
+                f"{self.config.BASE_URL}/", data=post_data, allow_redirects=False
             )
-            
+
             success = response.status_code in [200, 302]
-            
             return {
                 "success": success,
                 "status_code": response.status_code,
                 "post_content": post_content,
-                "redirect_location": response.headers.get("Location")
+                "redirect_location": response.headers.get("Location"),
+                "username": user_data["username"]
             }
-            
         except Exception as e:
             logger.error(f"Post creation failed: {e}")
-            return {
-                "success": False,
-                "error": str(e)
-            }
+            return {"success": False, "error": str(e)}
     
     def test_critical_endpoints(self) -> List[Dict]:
         """Test all critical endpoints and return results"""

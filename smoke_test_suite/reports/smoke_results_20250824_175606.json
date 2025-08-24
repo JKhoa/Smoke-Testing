@@ -1,0 +1,142 @@
+{
+  "start_time": "2025-08-24T17:54:19.628610",
+  "end_time": "2025-08-24T17:56:06.324038",
+  "total_duration": 106.695428,
+  "total_tests": 16,
+  "passed_tests": 0,
+  "failed_tests": 16,
+  "success_rate": 0.0,
+  "results": [
+    {
+      "test_name": "Application Startup",
+      "status": "fail",
+      "duration": 4.066035509109497,
+      "timestamp": "2025-08-24T17:54:23.694646",
+      "details": {},
+      "error": "Application not accessible: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA24441B20>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"
+    },
+    {
+      "test_name": "Home Page Access",
+      "status": "fail",
+      "duration": 4.086198329925537,
+      "timestamp": "2025-08-24T17:54:27.780844",
+      "details": {},
+      "error": "HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA246FE240>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"
+    },
+    {
+      "test_name": "Registration Page Access",
+      "status": "fail",
+      "duration": 4.068531274795532,
+      "timestamp": "2025-08-24T17:54:31.849376",
+      "details": {},
+      "error": "HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /auth/register (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA246FEBA0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"
+    },
+    {
+      "test_name": "User Registration",
+      "status": "fail",
+      "duration": 4.075159311294556,
+      "timestamp": "2025-08-24T17:54:35.924535",
+      "details": {},
+      "error": "User registration failed: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /auth/register (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA246FE7E0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"
+    },
+    {
+      "test_name": "Login Page Access",
+      "status": "fail",
+      "duration": 4.063648700714111,
+      "timestamp": "2025-08-24T17:54:39.988184",
+      "details": {},
+      "error": "HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /auth/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA246FF590>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"
+    },
+    {
+      "test_name": "User Login",
+      "status": "fail",
+      "duration": 8.135850429534912,
+      "timestamp": "2025-08-24T17:54:48.124034",
+      "details": {},
+      "error": "User login failed: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /auth/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA246FEF00>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"
+    },
+    {
+      "test_name": "User Login",
+      "status": "fail",
+      "duration": 8.139345407485962,
+      "timestamp": "2025-08-24T17:54:57.265254",
+      "details": {},
+      "error": "User login failed: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /auth/login (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA246FE5D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"
+    },
+    {
+      "test_name": "Explore Page Access",
+      "status": "fail",
+      "duration": 4.0675554275512695,
+      "timestamp": "2025-08-24T17:55:01.333916",
+      "details": {},
+      "error": "HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /explore (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA246FF7A0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"
+    },
+    {
+      "test_name": "Critical Endpoints",
+      "status": "fail",
+      "duration": 28.435410022735596,
+      "timestamp": "2025-08-24T17:55:29.769326",
+      "details": {},
+      "error": "Too many endpoint failures: 7/7"
+    },
+    {
+      "test_name": "Post Creation",
+      "status": "fail",
+      "duration": 8.141424179077148,
+      "timestamp": "2025-08-24T17:55:37.911747",
+      "details": {
+        "status_code": "N/A",
+        "post_content": "N/A..."
+      },
+      "error": "Could not login before creating post"
+    },
+    {
+      "test_name": "API Users Endpoint",
+      "status": "fail",
+      "duration": 4.070572376251221,
+      "timestamp": "2025-08-24T17:55:41.982319",
+      "details": {},
+      "error": "HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/users (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA246FECC0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"
+    },
+    {
+      "test_name": "API Root Accessibility",
+      "status": "fail",
+      "duration": 4.062199115753174,
+      "timestamp": "2025-08-24T17:55:50.111001",
+      "details": {},
+      "error": "HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA24740260>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"
+    },
+    {
+      "test_name": "API Users Endpoint",
+      "status": "fail",
+      "duration": 4.060324668884277,
+      "timestamp": "2025-08-24T17:55:54.172321",
+      "details": {},
+      "error": "HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/users (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA24740F80>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"
+    },
+    {
+      "test_name": "API Tokens Endpoint",
+      "status": "fail",
+      "duration": 4.052862644195557,
+      "timestamp": "2025-08-24T17:55:58.225184",
+      "details": {},
+      "error": "HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/tokens (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA24741310>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"
+    },
+    {
+      "test_name": "API Error Handling",
+      "status": "fail",
+      "duration": 4.05590033531189,
+      "timestamp": "2025-08-24T17:56:02.281084",
+      "details": {},
+      "error": "HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/nonexistent (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA247416D0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"
+    },
+    {
+      "test_name": "API Response Headers",
+      "status": "fail",
+      "duration": 4.042953014373779,
+      "timestamp": "2025-08-24T17:56:06.324038",
+      "details": {},
+      "error": "HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /api/users (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001EA246FEAB0>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))"
+    }
+  ]
+}

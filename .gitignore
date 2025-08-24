@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pytest_cache/
+.venv/
+venv/
+
+# Playwright / Node
+playwright_smoke/node_modules/
+playwright_smoke/playwright-report/
+playwright_smoke/test-results/
+playwright_smoke/test-results.json
+playwright_smoke/test-results.xml
+
+# Videos & screenshots
+*.webm
+*.png
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Reports keep only latest if needed (optional adjust)

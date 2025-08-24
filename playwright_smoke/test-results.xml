@@ -1,0 +1,394 @@
+<testsuites id="" name="" tests="10" failures="10" skipped="0" errors="0" time="15.943952000000001">
+<testsuite name="smoke.spec.js" timestamp="2025-08-24T11:47:57.653Z" hostname="chromium" tests="10" failures="10" skipped="0" time="44.691" errors="0">
+<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 1) Home loads &amp; has title" classname="smoke.spec.js" time="4.425">
+<failure message="smoke.spec.js:6:3 1) Home loads &amp; has title" type="FAILURE">
+<![CDATA[  [chromium] › smoke.spec.js:6:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 1) Home loads & has title 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Call log:
+      - navigating to "http://localhost:3000/", waiting until "load"
+
+
+       5 |
+       6 |   test('1) Home loads & has title', async ({ page }) => {
+    >  7 |     await page.goto(baseURL);
+         |                ^
+       8 |     await expect(page).toHaveTitle(/vkt-store|Shop|Home/);
+       9 |     
+      10 |     // Verify essential elements are present
+        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:7:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-00f25-ases-1-Home-loads-has-title-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-00f25-ases-1-Home-loads-has-title-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-00f25-ases-1-Home-loads-has-title-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-00f25-ases-1-Home-loads-has-title-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-00f25-ases-1-Home-loads-has-title-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-00f25-ases-1-Home-loads-has-title-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 2) Header navigation switches views" classname="smoke.spec.js" time="4.448">
+<failure message="smoke.spec.js:15:3 2) Header navigation switches views" type="FAILURE">
+<![CDATA[  [chromium] › smoke.spec.js:15:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 2) Header navigation switches views 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Call log:
+      - navigating to "http://localhost:3000/", waiting until "load"
+
+
+      14 |
+      15 |   test('2) Header navigation switches views', async ({ page }) => {
+    > 16 |     await page.goto(baseURL);
+         |                ^
+      17 |     
+      18 |     // Test navigation links
+      19 |     const navLinks = page.locator('nav a');
+        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:16:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-4fe70-r-navigation-switches-views-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-4fe70-r-navigation-switches-views-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-4fe70-r-navigation-switches-views-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-4fe70-r-navigation-switches-views-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-4fe70-r-navigation-switches-views-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-4fe70-r-navigation-switches-views-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 3) Products render (tolerant selectors)" classname="smoke.spec.js" time="5.182">
+<failure message="smoke.spec.js:35:3 3) Products render (tolerant selectors)" type="FAILURE">
+<![CDATA[  [chromium] › smoke.spec.js:35:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 3) Products render (tolerant selectors) 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/products
+    Call log:
+      - navigating to "http://localhost:3000/products", waiting until "load"
+
+
+      34 |
+      35 |   test('3) Products render (tolerant selectors)', async ({ page }) => {
+    > 36 |     await page.goto(baseURL + '/products');
+         |                ^
+      37 |     
+      38 |     // Wait for products to load with tolerant selectors
+      39 |     await page.waitForSelector('[data-testid="product"], .product, .product-card, .item', { timeout: 10000 });
+        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:36:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-5d5fa--render-tolerant-selectors--chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-5d5fa--render-tolerant-selectors--chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-5d5fa--render-tolerant-selectors--chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-5d5fa--render-tolerant-selectors--chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-5d5fa--render-tolerant-selectors--chromium\video.webm]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-5d5fa--render-tolerant-selectors--chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 4) Search filters products (if present)" classname="smoke.spec.js" time="4.712">
+<failure message="smoke.spec.js:50:3 4) Search filters products (if present)" type="FAILURE">
+<![CDATA[  [chromium] › smoke.spec.js:50:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 4) Search filters products (if present) 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Call log:
+      - navigating to "http://localhost:3000/", waiting until "load"
+
+
+      49 |
+      50 |   test('4) Search filters products (if present)', async ({ page }) => {
+    > 51 |     await page.goto(baseURL);
+         |                ^
+      52 |     
+      53 |     // Look for search input with various possible selectors
+      54 |     const searchSelectors = [
+        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:51:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-2cf19-ilters-products-if-present--chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-2cf19-ilters-products-if-present--chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-2cf19-ilters-products-if-present--chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-2cf19-ilters-products-if-present--chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-2cf19-ilters-products-if-present--chromium\video.webm]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-2cf19-ilters-products-if-present--chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 5) Category filter works (if present)" classname="smoke.spec.js" time="4.631">
+<failure message="smoke.spec.js:81:3 5) Category filter works (if present)" type="FAILURE">
+<![CDATA[  [chromium] › smoke.spec.js:81:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 5) Category filter works (if present) 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Call log:
+      - navigating to "http://localhost:3000/", waiting until "load"
+
+
+      80 |
+      81 |   test('5) Category filter works (if present)', async ({ page }) => {
+    > 82 |     await page.goto(baseURL);
+         |                ^
+      83 |     
+      84 |     // Look for category filters
+      85 |     const categorySelectors = [
+        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:82:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-ce211-ry-filter-works-if-present--chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-ce211-ry-filter-works-if-present--chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-ce211-ry-filter-works-if-present--chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-ce211-ry-filter-works-if-present--chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-ce211-ry-filter-works-if-present--chromium\video.webm]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-ce211-ry-filter-works-if-present--chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 6) Add to cart -&gt; appears in cart" classname="smoke.spec.js" time="4.762">
+<failure message="smoke.spec.js:113:3 6) Add to cart -&gt; appears in cart" type="FAILURE">
+<![CDATA[  [chromium] › smoke.spec.js:113:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 6) Add to cart -> appears in cart 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Call log:
+      - navigating to "http://localhost:3000/", waiting until "load"
+
+
+      112 |
+      113 |   test('6) Add to cart -> appears in cart', async ({ page }) => {
+    > 114 |     await page.goto(baseURL);
+          |                ^
+      115 |     
+      116 |     // Find and click on a product
+      117 |     const productSelectors = [
+        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:114:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-a6f6f-d-to-cart---appears-in-cart-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-a6f6f-d-to-cart---appears-in-cart-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-a6f6f-d-to-cart---appears-in-cart-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-a6f6f-d-to-cart---appears-in-cart-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-a6f6f-d-to-cart---appears-in-cart-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-a6f6f-d-to-cart---appears-in-cart-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 7) Quantity change updates total (if controls exist)" classname="smoke.spec.js" time="5.009">
+<failure message="smoke.spec.js:167:3 7) Quantity change updates total (if controls exist)" type="FAILURE">
+<![CDATA[  [chromium] › smoke.spec.js:167:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 7) Quantity change updates total (if controls exist) 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/cart
+    Call log:
+      - navigating to "http://localhost:3000/cart", waiting until "load"
+
+
+      166 |
+      167 |   test('7) Quantity change updates total (if controls exist)', async ({ page }) => {
+    > 168 |     await page.goto(baseURL + '/cart');
+          |                ^
+      169 |     
+      170 |     // Look for quantity controls
+      171 |     const quantitySelectors = [
+        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:168:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-074b7-es-total-if-controls-exist--chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-074b7-es-total-if-controls-exist--chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-074b7-es-total-if-controls-exist--chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-074b7-es-total-if-controls-exist--chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-074b7-es-total-if-controls-exist--chromium\video.webm]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-074b7-es-total-if-controls-exist--chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 8) Remove item from cart (if supported)" classname="smoke.spec.js" time="4.743">
+<failure message="smoke.spec.js:208:3 8) Remove item from cart (if supported)" type="FAILURE">
+<![CDATA[  [chromium] › smoke.spec.js:208:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 8) Remove item from cart (if supported) 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/cart
+    Call log:
+      - navigating to "http://localhost:3000/cart", waiting until "load"
+
+
+      207 |
+      208 |   test('8) Remove item from cart (if supported)', async ({ page }) => {
+    > 209 |     await page.goto(baseURL + '/cart');
+          |                ^
+      210 |     
+      211 |     // Look for remove buttons
+      212 |     const removeSelectors = [
+        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:209:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-3518d-tem-from-cart-if-supported--chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-3518d-tem-from-cart-if-supported--chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-3518d-tem-from-cart-if-supported--chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-3518d-tem-from-cart-if-supported--chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-3518d-tem-from-cart-if-supported--chromium\video.webm]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-3518d-tem-from-cart-if-supported--chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 9) Login empty submit shows error (if login exists)" classname="smoke.spec.js" time="3.313">
+<failure message="smoke.spec.js:235:3 9) Login empty submit shows error (if login exists)" type="FAILURE">
+<![CDATA[  [chromium] › smoke.spec.js:235:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 9) Login empty submit shows error (if login exists) 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Call log:
+      - navigating to "http://localhost:3000/", waiting until "load"
+
+
+      235 |   test('9) Login empty submit shows error (if login exists)', async ({ page }) => {
+      236 |     // Try to find login page
+    > 237 |     await page.goto(baseURL);
+          |                ^
+      238 |     
+      239 |     const loginSelectors = [
+      240 |       'a:has-text("Login")',
+        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:237:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-d0b3f-hows-error-if-login-exists--chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-d0b3f-hows-error-if-login-exists--chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-d0b3f-hows-error-if-login-exists--chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-d0b3f-hows-error-if-login-exists--chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-d0b3f-hows-error-if-login-exists--chromium\video.webm]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-d0b3f-hows-error-if-login-exists--chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 10) Cart persists after refresh (if implemented)" classname="smoke.spec.js" time="3.466">
+<failure message="smoke.spec.js:291:3 10) Cart persists after refresh (if implemented)" type="FAILURE">
+<![CDATA[  [chromium] › smoke.spec.js:291:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 10) Cart persists after refresh (if implemented) 
+
+    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Call log:
+      - navigating to "http://localhost:3000/", waiting until "load"
+
+
+      290 |
+      291 |   test('10) Cart persists after refresh (if implemented)', async ({ page }) => {
+    > 292 |     await page.goto(baseURL);
+          |                ^
+      293 |     
+      294 |     // Add item to cart first (simplified)
+      295 |     const productSelectors = [
+        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:292:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-153f6-ter-refresh-if-implemented--chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\smoke-SMOKE---vkt-store-UI-153f6-ter-refresh-if-implemented--chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-153f6-ter-refresh-if-implemented--chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-153f6-ter-refresh-if-implemented--chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-153f6-ter-refresh-if-implemented--chromium\video.webm]]
+
+[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-153f6-ter-refresh-if-implemented--chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

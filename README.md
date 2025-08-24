@@ -1,3 +1,125 @@
+# Microblog Smoke Test Suite (Python) & Playwright UI Demo
+
+Công cụ kiểm thử tự động cho ứng dụng Microblog (Python) cùng bộ demo UI Smoke bằng Playwright (tạo báo cáo PASS/FAIL hỗn hợp có chủ đích).
+## 📋 Mô tả
+
+Phần 1 (Python Suite): Kiểm tra nhanh sức khỏe các chức năng cốt lõi (API + Basic UI) của ứng dụng Microblog thực (Flask / `microblog`).
+Phần 2 (Playwright Demo): Môi trường demo độc lập dùng `demo_server.py` + Playwright để minh họa báo cáo với 4 test PASS và 6 test FAIL có chủ đích (các FAIL mô phỏng tính năng chưa triển khai: cart, search, navigation nâng cao...).
+
+Mục tiêu: Cung cấp ví dụ đầy đủ từ lý thuyết → triển khai → báo cáo → phân tích.
+### 🎯 Lựa chọn theo nhu cầu:
+- **🚀 Mới bắt đầu (Python)** → `smoke_test_suite/QUICK_START.md`
+- **🧪 Demo UI hỗn hợp PASS/FAIL** → Thư mục `playwright_smoke/` (chạy Playwright)
+- **❌ Gặp lỗi** → `TROUBLESHOOTING.md`
+- **🛠 Commands nhanh** → `CHEAT_SHEET.md`
+- **📚 Hiểu sâu** → `COMPLETE_GUIDE.md`
+- **📖 Lý thuyết tổng hợp** → `smoke_testing_report.md`
+- **🔍 So sánh Python vs Playwright** → Mục "So sánh hai cách tiếp cận" bên dưới.
+
+## 🧭 Kiến trúc tổng quan
+
+```
+root/
+├─ demo_server.py              # Flask mini microblog demo (cho Playwright)
+├─ smoke_test_suite/           # Bộ smoke test Python gốc
+├─ playwright_smoke/           # Bộ Playwright UI smoke (4 pass, 6 fail)
+│   ├─ playwright.config.js    # Có webServer tự chạy demo_server.py
+│   ├─ tests/smoke.spec.js     # Test có chú thích tiếng Việt chi tiết
+│   └─ package.json            # Scripts test / report
+└─ reports/ / smoke_testing_report.md ...
+```
+
+## 🔄 So sánh hai cách tiếp cận
+
+| Tiêu chí | Python Smoke Suite | Playwright Demo |
+|---------|--------------------|-----------------|
+| Mục tiêu | Xác minh build thực | Minh họa UI + báo cáo hỗn hợp |
+| Phạm vi | API + Basic UI + Logic | UI end-to-end giả lập |
+| App dưới test | Microblog thật chạy riêng | `demo_server.py` tự khởi động qua webServer |
+| Báo cáo | HTML tùy biến + JSON/CSV | HTML / JSON / JUnit chuẩn Playwright |
+| Kết quả điển hình | 100% pass (khi build ổn) | 40% pass / 60% fail có chủ đích |
+| Giá trị học tập | Cấu trúc smoke truyền thống | Kịch bản minh họa phân tích FAIL |
+
+## 🧪 Kịch bản PASS/FAIL có chủ đích (Playwright)
+
+Trong `smoke.spec.js`:
+- PASS: Home load, Explore content, Basic Home elements, Login page load
+- FAIL (cố tình): Navigation nâng cao, Search, Cart add, Quantity update, Remove item, Cart persistence
+
+Lý do: Các tính năng e-commerce chưa tồn tại trong `demo_server.py` → tạo fail giả lập để trình bày phân tích rủi ro và độ phủ smoke.
+
+## 📘 Tóm tắt lý thuyết bổ sung
+
+- Smoke vs Sanity: Smoke = kiểm tra rộng, độ sâu thấp ngay sau build; Sanity = tập con hẹp xác thực sửa lỗi/nhánh mới.
+- Smoke vs Regression: Regression sâu & toàn diện; Smoke là tiền đề trước khi chạy regression tốn thời gian.
+- Tiêu chí chọn test smoke: (1) Đường người dùng quan trọng (2) Điểm tích hợp chính (3) Chức năng tạo/doanh thu (4) Khởi động hệ thống (5) Bảo mật / auth cơ bản.
+- Tiêu chí pass build: Ví dụ yêu cầu ≥ 80% test smoke pass và không có lỗi thuộc mức Critical/Blocker trước khi tiếp tục.
+- Lợi ích bổ sung: Phản hồi sớm, giảm MTTR, tăng độ tin cậy pipeline CI, phát hiện cấu hình sai môi trường.
+
+## 🚥 Chiến lược cố tình tạo FAIL
+
+1. Đặt tên test rõ ràng (FAIL) để stakeholder hiểu là có chủ đích.
+2. Ghi chú nguyên nhân fail trong code (đã làm trong `smoke.spec.js`).
+3. Sử dụng nhóm tag/describe để lọc nếu cần (`npx playwright test -g PASS`).
+4. Báo cáo: Giải thích tỉ lệ pass thấp không phải do build hỏng mà do phạm vi demo.
+
+## ▶️ Chạy nhanh Playwright Demo
+
+```powershell
+cd playwright_smoke
+npm install            # lần đầu
+npx playwright install # cài browser
+npx playwright test    # chạy test (server tự start nhờ webServer)
+npx playwright show-report
+```
+
+Ghi chú: Có thể override URL: `$env:PLAYWRIGHT_BASE_URL="http://localhost:5001"` nếu đổi port trong `demo_server.py`.
+
+## 🛠 Scripts (Playwright)
+
+| Script | Mô tả |
+|--------|-------|
+| `npm test` | Chạy toàn bộ test headless |
+| `npm run test:headed` | Chạy có UI để quan sát |
+| `npm run test:debug` | Debug mode |
+| `npm run test:report` | Mở báo cáo HTML đã tạo |
+| `npm run install-browsers` | Cài browsers Playwright |
+
+## 🔐 demo_server.py (Mini Microblog)
+
+- Routes chính: `/`, `/auth/login`, `/auth/register`, `/explore`, API: `/api`, `/api/users`, `/api/tokens`.
+- Lưu trữ tạm (in-memory) nên reset khi restart.
+- Dữ liệu mặc định: user `testuser` + 1 post mẫu.
+
+Chạy độc lập (không cần Playwright):
+```powershell
+python demo_server.py
+```
+
+## ✅ Khi nào dùng Python Suite vs Playwright Demo?
+
+| Tình huống | Chọn |
+|------------|------|
+| Kiểm tra build thật trước regression | Python suite |
+| Trình diễn báo cáo UI hoặc đào tạo | Playwright demo |
+| Cần số liệu API + thời gian phản hồi | Python suite |
+| Muốn minh họa quản lý FAIL có chủ đích | Playwright demo |
+
+## 🌱 Mở rộng đề xuất
+
+- Thêm tag `@critical` cho test Python để filter trong CI.
+- Tách test FAIL có chủ đích sang file riêng `smoke_negative.spec.js` khi chuyển qua sản phẩm thực.
+- Thêm badge CI (GitHub Actions) cho smoke pass rate.
+- Áp dụng threshold: thất bại pipeline nếu pass rate < cấu hình (ví dụ 0.8).
+
+---
+## 🏗️ Cấu trúc dự án (Python Suite)
+## 🚀 Cài đặt và Sử dụng (Python Suite)
+## 📊 Báo cáo (Python Suite)
+## 🧪 Các Test Cases (Python Suite)
+## ⚙️ Cấu hình nâng cao (Python Suite)
+## 🔧 Troubleshooting (Python Suite)
+## 📈 Tích hợp CI/CD (Python Suite)
 # Microblog Smoke Test Suite
 
 Công cụ kiểm thử tự động được phát triển để thực hiện Smoke Testing cho ứng dụng Microblog.
