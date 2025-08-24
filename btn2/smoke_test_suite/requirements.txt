@@ -1,0 +1,51 @@
+# Microblog Smoke Test Suite Requirements
+
+# Core testing dependencies
+requests==2.31.0
+pytest==7.4.3
+pytest-html==4.1.1
+
+# Web automation (optional - UI tests will be skipped if not available)
+selenium==4.15.2
+webdriver-manager==4.0.1
+
+# HTML parsing and processing
+beautifulsoup4==4.12.2
+lxml==4.9.3
+
+# Report generation
+jinja2==3.1.2
+
+# Configuration and utilities
+python-dotenv==1.0.0
+colorama==0.4.6
+
+# JSON handling (included in Python standard library, but listed for clarity)
+# json - built-in
+
+# CSV handling (included in Python standard library)
+# csv - built-in
+
+# Date/time handling (included in Python standard library)  
+# datetime - built-in
+
+# HTTP status handling
+httpx==0.25.2
+
+# Logging and debugging
+rich==13.7.0
+
+# Optional: Performance monitoring
+psutil==5.9.6
+
+# Optional: Database testing (if needed)
+# sqlalchemy==2.0.23
+# sqlite3 - built-in
+
+# Development and testing utilities
+coverage==7.3.2
+black==23.12.0
+flake8==6.1.0
+
+# Environment management
+python-decouple==3.8

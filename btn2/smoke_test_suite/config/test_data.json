@@ -1,0 +1,106 @@
+{
+    "test_scenarios": [{
+            "name": "Basic Application Health",
+            "description": "Verify application is running and responsive",
+            "priority": "critical",
+            "tests": [
+                "test_application_startup",
+                "test_home_page_access",
+                "test_static_files_loading"
+            ]
+        },
+        {
+            "name": "Authentication Flow",
+            "description": "Test user registration and login functionality",
+            "priority": "critical",
+            "tests": [
+                "test_registration_page_access",
+                "test_user_registration",
+                "test_login_page_access",
+                "test_user_login",
+                "test_user_logout"
+            ]
+        },
+        {
+            "name": "Core User Features",
+            "description": "Test basic user functionality",
+            "priority": "high",
+            "tests": [
+                "test_post_creation",
+                "test_post_display",
+                "test_user_profile_access",
+                "test_explore_page"
+            ]
+        },
+        {
+            "name": "API Endpoints",
+            "description": "Test critical API endpoints",
+            "priority": "medium",
+            "tests": [
+                "test_api_users_endpoint",
+                "test_api_tokens_endpoint",
+                "test_api_response_format"
+            ]
+        }
+    ],
+    "test_data": {
+        "users": [{
+                "username": "testuser1",
+                "email": "testuser1@example.com",
+                "password": "TestPass123!"
+            },
+            {
+                "username": "testuser2",
+                "email": "testuser2@example.com",
+                "password": "TestPass456!"
+            }
+        ],
+        "posts": [{
+                "content": "Hello world! This is my first smoke test post.",
+                "language": "en"
+            },
+            {
+                "content": "Testing post creation functionality with longer content to ensure the application handles various post lengths correctly.",
+                "language": "en"
+            }
+        ],
+        "expected_elements": {
+            "login_page": [
+                "username",
+                "password",
+                "remember_me",
+                "submit"
+            ],
+            "register_page": [
+                "username",
+                "email",
+                "password",
+                "password2",
+                "submit"
+            ],
+            "home_page": [
+                "navbar",
+                "post_form",
+                "posts_list"
+            ]
+        }
+    },
+    "environment_checks": {
+        "required_services": [{
+                "name": "Flask Application",
+                "url": "http://localhost:5000",
+                "timeout": 10
+            },
+            {
+                "name": "Database Connection",
+                "check_type": "database",
+                "timeout": 5
+            }
+        ],
+        "required_files": [
+            "app.db",
+            "config.py",
+            "microblog.py"
+        ]
+    }
+}
