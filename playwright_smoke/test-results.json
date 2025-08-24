@@ -62,7 +62,11 @@
     "updateSourceMethod": "patch",
     "version": "1.55.0",
     "workers": 8,
-    "webServer": null
+    "webServer": {
+      "command": "python ../demo_server.py",
+      "url": "http://localhost:5000",
+      "reuseExistingServer": true
+    }
   },
   "suites": [
     {
@@ -73,14 +77,14 @@
       "specs": [],
       "suites": [
         {
-          "title": "SMOKE - vkt-store UI on KTPM arch (10 cases)",
+          "title": "SMOKE - Demo Microblog UI (6 Fail + 4 Pass Tests)",
           "file": "smoke.spec.js",
           "line": 3,
           "column": 6,
           "specs": [
             {
-              "title": "1) Home loads & has title",
-              "ok": false,
+              "title": "1) Home loads & has title (PASS)",
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -93,67 +97,27 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 4425,
-                      "error": {
-                        "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n",
-                        "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n\n    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:7:16",
-                        "location": {
-                          "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                          "column": 16,
-                          "line": 7
-                        },
-                        "snippet": "\u001b[0m \u001b[90m  5 |\u001b[39m\n \u001b[90m  6 |\u001b[39m   test(\u001b[32m'1) Home loads & has title'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  8 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[35m/vkt-store|Shop|Home/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m  9 |\u001b[39m     \n \u001b[90m 10 |\u001b[39m     \u001b[90m// Verify essential elements are present\u001b[39m\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                            "column": 16,
-                            "line": 7
-                          },
-                          "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  5 |\u001b[39m\n \u001b[90m  6 |\u001b[39m   test(\u001b[32m'1) Home loads & has title'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  8 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveTitle(\u001b[35m/vkt-store|Shop|Home/\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m  9 |\u001b[39m     \n \u001b[90m 10 |\u001b[39m     \u001b[90m// Verify essential elements are present\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:7:16\u001b[22m"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 1342,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-08-24T11:47:59.769Z",
+                      "startTime": "2025-08-24T15:06:09.196Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-00f25-ases-1-Home-loads-has-title-chromium\\test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-00f25-ases-1-Home-loads-has-title-chromium\\video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-00f25-ases-1-Home-loads-has-title-chromium\\error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                        "column": 16,
-                        "line": 7
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
-              "id": "2c14808d47b386fba9eb-53394896ec6c09bab3b6",
+              "id": "2c14808d47b386fba9eb-f576f8864d85d2ad581f",
               "file": "smoke.spec.js",
               "line": 6,
-              "column": 3
+              "column": 5
             },
             {
-              "title": "2) Header navigation switches views",
+              "title": "2) Header navigation switches views (FAIL)",
               "ok": false,
               "tags": [],
               "tests": [
@@ -168,67 +132,67 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "failed",
-                      "duration": 4448,
+                      "duration": 3029,
                       "error": {
-                        "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n",
-                        "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n\n    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:16:16",
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('#main-navigation-menu')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  2000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 2000ms\u001b[22m\n\u001b[2m  - waiting for locator('#main-navigation-menu')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('#main-navigation-menu')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  2000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 2000ms\u001b[22m\n\u001b[2m  - waiting for locator('#main-navigation-menu')\u001b[22m\n\n    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:32:61",
                         "location": {
                           "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                          "column": 16,
-                          "line": 16
+                          "column": 61,
+                          "line": 32
                         },
-                        "snippet": "\u001b[0m \u001b[90m 14 |\u001b[39m\n \u001b[90m 15 |\u001b[39m   test(\u001b[32m'2) Header navigation switches views'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 17 |\u001b[39m     \n \u001b[90m 18 |\u001b[39m     \u001b[90m// Test navigation links\u001b[39m\n \u001b[90m 19 |\u001b[39m     \u001b[36mconst\u001b[39m navLinks \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'nav a'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m         \u001b[90m// không có menu navigation phức tạp như #main-navigation-menu\u001b[39m\n \u001b[90m 31 |\u001b[39m         \u001b[90m// Đây là tính năng nâng cao chưa được implement trong demo\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#main-navigation-menu'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m         \n \u001b[90m 34 |\u001b[39m         \u001b[90m// Kết quả: FAIL - Menu navigation chính không tồn tại trong demo server\u001b[39m\n \u001b[90m 35 |\u001b[39m         \u001b[90m// Giải pháp: Cần implement menu navigation hoặc sử dụng selector phù hợp với demo\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                            "column": 16,
-                            "line": 16
+                            "column": 61,
+                            "line": 32
                           },
-                          "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 14 |\u001b[39m\n \u001b[90m 15 |\u001b[39m   test(\u001b[32m'2) Header navigation switches views'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 16 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 17 |\u001b[39m     \n \u001b[90m 18 |\u001b[39m     \u001b[90m// Test navigation links\u001b[39m\n \u001b[90m 19 |\u001b[39m     \u001b[36mconst\u001b[39m navLinks \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'nav a'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:16:16\u001b[22m"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('#main-navigation-menu')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  2000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 2000ms\u001b[22m\n\u001b[2m  - waiting for locator('#main-navigation-menu')\u001b[22m\n\n\n\u001b[0m \u001b[90m 30 |\u001b[39m         \u001b[90m// không có menu navigation phức tạp như #main-navigation-menu\u001b[39m\n \u001b[90m 31 |\u001b[39m         \u001b[90m// Đây là tính năng nâng cao chưa được implement trong demo\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#main-navigation-menu'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m         \n \u001b[90m 34 |\u001b[39m         \u001b[90m// Kết quả: FAIL - Menu navigation chính không tồn tại trong demo server\u001b[39m\n \u001b[90m 35 |\u001b[39m         \u001b[90m// Giải pháp: Cần implement menu navigation hoặc sử dụng selector phù hợp với demo\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:32:61\u001b[22m"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-08-24T11:47:59.768Z",
+                      "startTime": "2025-08-24T15:06:09.143Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-4fe70-r-navigation-switches-views-chromium\\test-failed-1.png"
+                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---Demo-Microbl-c978e-gation-switches-views-FAIL--chromium\\test-failed-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-4fe70-r-navigation-switches-views-chromium\\video.webm"
+                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---Demo-Microbl-c978e-gation-switches-views-FAIL--chromium\\video.webm"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-4fe70-r-navigation-switches-views-chromium\\error-context.md"
+                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---Demo-Microbl-c978e-gation-switches-views-FAIL--chromium\\error-context.md"
                         }
                       ],
                       "errorLocation": {
                         "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                        "column": 16,
-                        "line": 16
+                        "column": 61,
+                        "line": 32
                       }
                     }
                   ],
                   "status": "unexpected"
                 }
               ],
-              "id": "2c14808d47b386fba9eb-d45cd257c5035a325347",
+              "id": "2c14808d47b386fba9eb-6f9bdb89f4e62e2467aa",
               "file": "smoke.spec.js",
-              "line": 15,
-              "column": 3
+              "line": 21,
+              "column": 5
             },
             {
-              "title": "3) Products render (tolerant selectors)",
-              "ok": false,
+              "title": "3) Products render (PASS)",
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -241,67 +205,27 @@
                     {
                       "workerIndex": 2,
                       "parallelIndex": 2,
-                      "status": "failed",
-                      "duration": 5182,
-                      "error": {
-                        "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/products\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/products\", waiting until \"load\"\u001b[22m\n",
-                        "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/products\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/products\", waiting until \"load\"\u001b[22m\n\n    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:36:16",
-                        "location": {
-                          "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                          "column": 16,
-                          "line": 36
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 34 |\u001b[39m\n \u001b[90m 35 |\u001b[39m   test(\u001b[32m'3) Products render (tolerant selectors)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL \u001b[33m+\u001b[39m \u001b[32m'/products'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m     \n \u001b[90m 38 |\u001b[39m     \u001b[90m// Wait for products to load with tolerant selectors\u001b[39m\n \u001b[90m 39 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'[data-testid=\"product\"], .product, .product-card, .item'\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                            "column": 16,
-                            "line": 36
-                          },
-                          "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/products\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/products\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 34 |\u001b[39m\n \u001b[90m 35 |\u001b[39m   test(\u001b[32m'3) Products render (tolerant selectors)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL \u001b[33m+\u001b[39m \u001b[32m'/products'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 37 |\u001b[39m     \n \u001b[90m 38 |\u001b[39m     \u001b[90m// Wait for products to load with tolerant selectors\u001b[39m\n \u001b[90m 39 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'[data-testid=\"product\"], .product, .product-card, .item'\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:36:16\u001b[22m"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 1382,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-08-24T11:47:59.793Z",
+                      "startTime": "2025-08-24T15:06:09.184Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-5d5fa--render-tolerant-selectors--chromium\\test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-5d5fa--render-tolerant-selectors--chromium\\video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-5d5fa--render-tolerant-selectors--chromium\\error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                        "column": 16,
-                        "line": 36
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
-              "id": "2c14808d47b386fba9eb-c8dbe1b85e09b246f28d",
+              "id": "2c14808d47b386fba9eb-8dc2d44bce71f93e7ff8",
               "file": "smoke.spec.js",
-              "line": 35,
-              "column": 3
+              "line": 38,
+              "column": 5
             },
             {
-              "title": "4) Search filters products (if present)",
+              "title": "4) Search filters products (FAIL)",
               "ok": false,
               "tags": [],
               "tests": [
@@ -316,67 +240,67 @@
                       "workerIndex": 3,
                       "parallelIndex": 3,
                       "status": "failed",
-                      "duration": 4712,
+                      "duration": 3252,
                       "error": {
-                        "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n",
-                        "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n\n    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:51:16",
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('#search-box')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  2000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 2000ms\u001b[22m\n\u001b[2m  - waiting for locator('#search-box')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('#search-box')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  2000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 2000ms\u001b[22m\n\u001b[2m  - waiting for locator('#search-box')\u001b[22m\n\n    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:68:51",
                         "location": {
                           "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                          "column": 16,
-                          "line": 51
+                          "column": 51,
+                          "line": 68
                         },
-                        "snippet": "\u001b[0m \u001b[90m 49 |\u001b[39m\n \u001b[90m 50 |\u001b[39m   test(\u001b[32m'4) Search filters products (if present)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 51 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 52 |\u001b[39m     \n \u001b[90m 53 |\u001b[39m     \u001b[90m// Look for search input with various possible selectors\u001b[39m\n \u001b[90m 54 |\u001b[39m     \u001b[36mconst\u001b[39m searchSelectors \u001b[33m=\u001b[39m [\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 66 |\u001b[39m         \u001b[90m// Chỉ có các trang cơ bản: home, login, register, explore\u001b[39m\n \u001b[90m 67 |\u001b[39m         \u001b[90m// Tính năng search là tính năng nâng cao chưa được implement\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 68 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#search-box'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 69 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#search-results'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 70 |\u001b[39m         \n \u001b[90m 71 |\u001b[39m         \u001b[90m// Kết quả: FAIL - Chức năng search không tồn tại trong demo server\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                            "column": 16,
-                            "line": 51
+                            "column": 51,
+                            "line": 68
                           },
-                          "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 49 |\u001b[39m\n \u001b[90m 50 |\u001b[39m   test(\u001b[32m'4) Search filters products (if present)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 51 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 52 |\u001b[39m     \n \u001b[90m 53 |\u001b[39m     \u001b[90m// Look for search input with various possible selectors\u001b[39m\n \u001b[90m 54 |\u001b[39m     \u001b[36mconst\u001b[39m searchSelectors \u001b[33m=\u001b[39m [\u001b[0m\n\u001b[2m    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:51:16\u001b[22m"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('#search-box')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  2000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 2000ms\u001b[22m\n\u001b[2m  - waiting for locator('#search-box')\u001b[22m\n\n\n\u001b[0m \u001b[90m 66 |\u001b[39m         \u001b[90m// Chỉ có các trang cơ bản: home, login, register, explore\u001b[39m\n \u001b[90m 67 |\u001b[39m         \u001b[90m// Tính năng search là tính năng nâng cao chưa được implement\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 68 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#search-box'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 69 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#search-results'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 70 |\u001b[39m         \n \u001b[90m 71 |\u001b[39m         \u001b[90m// Kết quả: FAIL - Chức năng search không tồn tại trong demo server\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:68:51\u001b[22m"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-08-24T11:47:59.809Z",
+                      "startTime": "2025-08-24T15:06:09.203Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-2cf19-ilters-products-if-present--chromium\\test-failed-1.png"
+                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---Demo-Microbl-d1098-arch-filters-products-FAIL--chromium\\test-failed-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-2cf19-ilters-products-if-present--chromium\\video.webm"
+                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---Demo-Microbl-d1098-arch-filters-products-FAIL--chromium\\video.webm"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-2cf19-ilters-products-if-present--chromium\\error-context.md"
+                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---Demo-Microbl-d1098-arch-filters-products-FAIL--chromium\\error-context.md"
                         }
                       ],
                       "errorLocation": {
                         "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                        "column": 16,
-                        "line": 51
+                        "column": 51,
+                        "line": 68
                       }
                     }
                   ],
                   "status": "unexpected"
                 }
               ],
-              "id": "2c14808d47b386fba9eb-d64491b0eebf9fec5fbc",
+              "id": "2c14808d47b386fba9eb-27703f7034eab0ead511",
               "file": "smoke.spec.js",
-              "line": 50,
-              "column": 3
+              "line": 57,
+              "column": 5
             },
             {
-              "title": "5) Category filter works (if present)",
-              "ok": false,
+              "title": "5) Category filter works (PASS)",
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -389,67 +313,27 @@
                     {
                       "workerIndex": 4,
                       "parallelIndex": 4,
-                      "status": "failed",
-                      "duration": 4631,
-                      "error": {
-                        "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n",
-                        "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n\n    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:82:16",
-                        "location": {
-                          "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                          "column": 16,
-                          "line": 82
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 80 |\u001b[39m\n \u001b[90m 81 |\u001b[39m   test(\u001b[32m'5) Category filter works (if present)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 82 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 83 |\u001b[39m     \n \u001b[90m 84 |\u001b[39m     \u001b[90m// Look for category filters\u001b[39m\n \u001b[90m 85 |\u001b[39m     \u001b[36mconst\u001b[39m categorySelectors \u001b[33m=\u001b[39m [\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                            "column": 16,
-                            "line": 82
-                          },
-                          "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 80 |\u001b[39m\n \u001b[90m 81 |\u001b[39m   test(\u001b[32m'5) Category filter works (if present)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 82 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 83 |\u001b[39m     \n \u001b[90m 84 |\u001b[39m     \u001b[90m// Look for category filters\u001b[39m\n \u001b[90m 85 |\u001b[39m     \u001b[36mconst\u001b[39m categorySelectors \u001b[33m=\u001b[39m [\u001b[0m\n\u001b[2m    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:82:16\u001b[22m"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 1452,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-08-24T11:47:59.859Z",
+                      "startTime": "2025-08-24T15:06:09.315Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-ce211-ry-filter-works-if-present--chromium\\test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-ce211-ry-filter-works-if-present--chromium\\video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-ce211-ry-filter-works-if-present--chromium\\error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                        "column": 16,
-                        "line": 82
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
-              "id": "2c14808d47b386fba9eb-bc50c6cc8148311fbd8c",
+              "id": "2c14808d47b386fba9eb-bb1eeece66f7400114a8",
               "file": "smoke.spec.js",
-              "line": 81,
-              "column": 3
+              "line": 75,
+              "column": 5
             },
             {
-              "title": "6) Add to cart -> appears in cart",
+              "title": "6) Add to cart -> appears in cart (FAIL)",
               "ok": false,
               "tags": [],
               "tests": [
@@ -464,66 +348,66 @@
                       "workerIndex": 5,
                       "parallelIndex": 5,
                       "status": "failed",
-                      "duration": 4762,
+                      "duration": 3273,
                       "error": {
-                        "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n",
-                        "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n\n    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:114:16",
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('#add-to-cart-button')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  2000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 2000ms\u001b[22m\n\u001b[2m  - waiting for locator('#add-to-cart-button')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('#add-to-cart-button')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  2000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 2000ms\u001b[22m\n\u001b[2m  - waiting for locator('#add-to-cart-button')\u001b[22m\n\n    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:102:59",
                         "location": {
                           "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                          "column": 16,
-                          "line": 114
+                          "column": 59,
+                          "line": 102
                         },
-                        "snippet": "\u001b[0m \u001b[90m 112 |\u001b[39m\n \u001b[90m 113 |\u001b[39m   test(\u001b[32m'6) Add to cart -> appears in cart'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 114 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 115 |\u001b[39m     \n \u001b[90m 116 |\u001b[39m     \u001b[90m// Find and click on a product\u001b[39m\n \u001b[90m 117 |\u001b[39m     \u001b[36mconst\u001b[39m productSelectors \u001b[33m=\u001b[39m [\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 100 |\u001b[39m         \u001b[90m// Không có chức năng shopping cart, chỉ có chức năng tạo posts\u001b[39m\n \u001b[90m 101 |\u001b[39m         \u001b[90m// Đây là tính năng của ứng dụng khác (e-commerce) không có trong microblog\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 102 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#add-to-cart-button'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 103 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#cart-icon'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 104 |\u001b[39m         \n \u001b[90m 105 |\u001b[39m         \u001b[90m// Kết quả: FAIL - Chức năng shopping cart không tồn tại trong microblog demo\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                            "column": 16,
-                            "line": 114
+                            "column": 59,
+                            "line": 102
                           },
-                          "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 112 |\u001b[39m\n \u001b[90m 113 |\u001b[39m   test(\u001b[32m'6) Add to cart -> appears in cart'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 114 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 115 |\u001b[39m     \n \u001b[90m 116 |\u001b[39m     \u001b[90m// Find and click on a product\u001b[39m\n \u001b[90m 117 |\u001b[39m     \u001b[36mconst\u001b[39m productSelectors \u001b[33m=\u001b[39m [\u001b[0m\n\u001b[2m    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:114:16\u001b[22m"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('#add-to-cart-button')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  2000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 2000ms\u001b[22m\n\u001b[2m  - waiting for locator('#add-to-cart-button')\u001b[22m\n\n\n\u001b[0m \u001b[90m 100 |\u001b[39m         \u001b[90m// Không có chức năng shopping cart, chỉ có chức năng tạo posts\u001b[39m\n \u001b[90m 101 |\u001b[39m         \u001b[90m// Đây là tính năng của ứng dụng khác (e-commerce) không có trong microblog\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 102 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#add-to-cart-button'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 103 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#cart-icon'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 104 |\u001b[39m         \n \u001b[90m 105 |\u001b[39m         \u001b[90m// Kết quả: FAIL - Chức năng shopping cart không tồn tại trong microblog demo\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:102:59\u001b[22m"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-08-24T11:47:59.951Z",
+                      "startTime": "2025-08-24T15:06:09.211Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-a6f6f-d-to-cart---appears-in-cart-chromium\\test-failed-1.png"
+                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---Demo-Microbl-015e4-art---appears-in-cart-FAIL--chromium\\test-failed-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-a6f6f-d-to-cart---appears-in-cart-chromium\\video.webm"
+                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---Demo-Microbl-015e4-art---appears-in-cart-FAIL--chromium\\video.webm"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-a6f6f-d-to-cart---appears-in-cart-chromium\\error-context.md"
+                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---Demo-Microbl-015e4-art---appears-in-cart-FAIL--chromium\\error-context.md"
                         }
                       ],
                       "errorLocation": {
                         "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                        "column": 16,
-                        "line": 114
+                        "column": 59,
+                        "line": 102
                       }
                     }
                   ],
                   "status": "unexpected"
                 }
               ],
-              "id": "2c14808d47b386fba9eb-239f977a72d5fa92e1a2",
+              "id": "2c14808d47b386fba9eb-39bb548d9a6ed4b419b4",
               "file": "smoke.spec.js",
-              "line": 113,
-              "column": 3
+              "line": 91,
+              "column": 5
             },
             {
-              "title": "7) Quantity change updates total (if controls exist)",
+              "title": "7) Quantity change updates total (FAIL)",
               "ok": false,
               "tags": [],
               "tests": [
@@ -538,66 +422,66 @@
                       "workerIndex": 6,
                       "parallelIndex": 6,
                       "status": "failed",
-                      "duration": 5009,
+                      "duration": 3064,
                       "error": {
-                        "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/cart\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/cart\", waiting until \"load\"\u001b[22m\n",
-                        "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/cart\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/cart\", waiting until \"load\"\u001b[22m\n\n    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:168:16",
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('#quantity-selector')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  2000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 2000ms\u001b[22m\n\u001b[2m  - waiting for locator('#quantity-selector')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('#quantity-selector')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  2000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 2000ms\u001b[22m\n\u001b[2m  - waiting for locator('#quantity-selector')\u001b[22m\n\n    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:121:58",
                         "location": {
                           "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                          "column": 16,
-                          "line": 168
+                          "column": 58,
+                          "line": 121
                         },
-                        "snippet": "\u001b[0m \u001b[90m 166 |\u001b[39m\n \u001b[90m 167 |\u001b[39m   test(\u001b[32m'7) Quantity change updates total (if controls exist)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 168 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL \u001b[33m+\u001b[39m \u001b[32m'/cart'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 169 |\u001b[39m     \n \u001b[90m 170 |\u001b[39m     \u001b[90m// Look for quantity controls\u001b[39m\n \u001b[90m 171 |\u001b[39m     \u001b[36mconst\u001b[39m quantitySelectors \u001b[33m=\u001b[39m [\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 119 |\u001b[39m         \u001b[90m// Tính năng quantity selector chỉ có trong ứng dụng shopping, không có trong microblog\u001b[39m\n \u001b[90m 120 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'body'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 121 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#quantity-selector'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 122 |\u001b[39m         \n \u001b[90m 123 |\u001b[39m         \u001b[90m// Kết quả: FAIL - Trang cart không tồn tại (404), quantity selector không có\u001b[39m\n \u001b[90m 124 |\u001b[39m         \u001b[90m// Giải pháp: Cần implement trang cart hoặc thay đổi test case phù hợp với microblog\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                            "column": 16,
-                            "line": 168
+                            "column": 58,
+                            "line": 121
                           },
-                          "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/cart\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/cart\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 166 |\u001b[39m\n \u001b[90m 167 |\u001b[39m   test(\u001b[32m'7) Quantity change updates total (if controls exist)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 168 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL \u001b[33m+\u001b[39m \u001b[32m'/cart'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 169 |\u001b[39m     \n \u001b[90m 170 |\u001b[39m     \u001b[90m// Look for quantity controls\u001b[39m\n \u001b[90m 171 |\u001b[39m     \u001b[36mconst\u001b[39m quantitySelectors \u001b[33m=\u001b[39m [\u001b[0m\n\u001b[2m    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:168:16\u001b[22m"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('#quantity-selector')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  2000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 2000ms\u001b[22m\n\u001b[2m  - waiting for locator('#quantity-selector')\u001b[22m\n\n\n\u001b[0m \u001b[90m 119 |\u001b[39m         \u001b[90m// Tính năng quantity selector chỉ có trong ứng dụng shopping, không có trong microblog\u001b[39m\n \u001b[90m 120 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'body'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 121 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#quantity-selector'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 122 |\u001b[39m         \n \u001b[90m 123 |\u001b[39m         \u001b[90m// Kết quả: FAIL - Trang cart không tồn tại (404), quantity selector không có\u001b[39m\n \u001b[90m 124 |\u001b[39m         \u001b[90m// Giải pháp: Cần implement trang cart hoặc thay đổi test case phù hợp với microblog\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:121:58\u001b[22m"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-08-24T11:47:59.856Z",
+                      "startTime": "2025-08-24T15:06:09.385Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-074b7-es-total-if-controls-exist--chromium\\test-failed-1.png"
+                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---Demo-Microbl-bbba6--change-updates-total-FAIL--chromium\\test-failed-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-074b7-es-total-if-controls-exist--chromium\\video.webm"
+                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---Demo-Microbl-bbba6--change-updates-total-FAIL--chromium\\video.webm"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-074b7-es-total-if-controls-exist--chromium\\error-context.md"
+                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---Demo-Microbl-bbba6--change-updates-total-FAIL--chromium\\error-context.md"
                         }
                       ],
                       "errorLocation": {
                         "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                        "column": 16,
-                        "line": 168
+                        "column": 58,
+                        "line": 121
                       }
                     }
                   ],
                   "status": "unexpected"
                 }
               ],
-              "id": "2c14808d47b386fba9eb-8dd3881c38473c5da75f",
+              "id": "2c14808d47b386fba9eb-5da4baf00f1eb48ea791",
               "file": "smoke.spec.js",
-              "line": 167,
-              "column": 3
+              "line": 109,
+              "column": 5
             },
             {
-              "title": "8) Remove item from cart (if supported)",
+              "title": "8) Remove item from cart (FAIL)",
               "ok": false,
               "tags": [],
               "tests": [
@@ -612,67 +496,67 @@
                       "workerIndex": 7,
                       "parallelIndex": 7,
                       "status": "failed",
-                      "duration": 4743,
+                      "duration": 3473,
                       "error": {
-                        "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/cart\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/cart\", waiting until \"load\"\u001b[22m\n",
-                        "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/cart\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/cart\", waiting until \"load\"\u001b[22m\n\n    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:209:16",
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('#remove-item-button')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  2000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 2000ms\u001b[22m\n\u001b[2m  - waiting for locator('#remove-item-button')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('#remove-item-button')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  2000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 2000ms\u001b[22m\n\u001b[2m  - waiting for locator('#remove-item-button')\u001b[22m\n\n    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:138:59",
                         "location": {
                           "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                          "column": 16,
-                          "line": 209
+                          "column": 59,
+                          "line": 138
                         },
-                        "snippet": "\u001b[0m \u001b[90m 207 |\u001b[39m\n \u001b[90m 208 |\u001b[39m   test(\u001b[32m'8) Remove item from cart (if supported)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 209 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL \u001b[33m+\u001b[39m \u001b[32m'/cart'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 210 |\u001b[39m     \n \u001b[90m 211 |\u001b[39m     \u001b[90m// Look for remove buttons\u001b[39m\n \u001b[90m 212 |\u001b[39m     \u001b[36mconst\u001b[39m removeSelectors \u001b[33m=\u001b[39m [\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 136 |\u001b[39m         \u001b[90m// Không có nút remove item hay thông báo cart empty\u001b[39m\n \u001b[90m 137 |\u001b[39m         \u001b[90m// Đây là tính năng e-commerce không có trong microblog\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 138 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#remove-item-button'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 139 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#cart-empty-message'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 140 |\u001b[39m         \n \u001b[90m 141 |\u001b[39m         \u001b[90m// Kết quả: FAIL - Chức năng remove item không tồn tại trong microblog\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                            "column": 16,
-                            "line": 209
+                            "column": 59,
+                            "line": 138
                           },
-                          "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/cart\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/cart\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 207 |\u001b[39m\n \u001b[90m 208 |\u001b[39m   test(\u001b[32m'8) Remove item from cart (if supported)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 209 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL \u001b[33m+\u001b[39m \u001b[32m'/cart'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 210 |\u001b[39m     \n \u001b[90m 211 |\u001b[39m     \u001b[90m// Look for remove buttons\u001b[39m\n \u001b[90m 212 |\u001b[39m     \u001b[36mconst\u001b[39m removeSelectors \u001b[33m=\u001b[39m [\u001b[0m\n\u001b[2m    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:209:16\u001b[22m"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('#remove-item-button')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  2000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 2000ms\u001b[22m\n\u001b[2m  - waiting for locator('#remove-item-button')\u001b[22m\n\n\n\u001b[0m \u001b[90m 136 |\u001b[39m         \u001b[90m// Không có nút remove item hay thông báo cart empty\u001b[39m\n \u001b[90m 137 |\u001b[39m         \u001b[90m// Đây là tính năng e-commerce không có trong microblog\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 138 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#remove-item-button'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 139 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#cart-empty-message'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 140 |\u001b[39m         \n \u001b[90m 141 |\u001b[39m         \u001b[90m// Kết quả: FAIL - Chức năng remove item không tồn tại trong microblog\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:138:59\u001b[22m"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-08-24T11:48:00.013Z",
+                      "startTime": "2025-08-24T15:06:09.279Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-3518d-tem-from-cart-if-supported--chromium\\test-failed-1.png"
+                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---Demo-Microbl-6b685-Remove-item-from-cart-FAIL--chromium\\test-failed-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-3518d-tem-from-cart-if-supported--chromium\\video.webm"
+                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---Demo-Microbl-6b685-Remove-item-from-cart-FAIL--chromium\\video.webm"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-3518d-tem-from-cart-if-supported--chromium\\error-context.md"
+                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---Demo-Microbl-6b685-Remove-item-from-cart-FAIL--chromium\\error-context.md"
                         }
                       ],
                       "errorLocation": {
                         "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                        "column": 16,
-                        "line": 209
+                        "column": 59,
+                        "line": 138
                       }
                     }
                   ],
                   "status": "unexpected"
                 }
               ],
-              "id": "2c14808d47b386fba9eb-848aed23e29f054000bf",
+              "id": "2c14808d47b386fba9eb-b2ae0508421a9ef0744e",
               "file": "smoke.spec.js",
-              "line": 208,
-              "column": 3
+              "line": 127,
+              "column": 5
             },
             {
-              "title": "9) Login empty submit shows error (if login exists)",
-              "ok": false,
+              "title": "9) Login empty submit shows error (PASS)",
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -683,69 +567,29 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 8,
+                      "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 3313,
-                      "error": {
-                        "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n",
-                        "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n\n    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:237:16",
-                        "location": {
-                          "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                          "column": 16,
-                          "line": 237
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 235 |\u001b[39m   test(\u001b[32m'9) Login empty submit shows error (if login exists)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 236 |\u001b[39m     \u001b[90m// Try to find login page\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 237 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 238 |\u001b[39m     \n \u001b[90m 239 |\u001b[39m     \u001b[36mconst\u001b[39m loginSelectors \u001b[33m=\u001b[39m [\n \u001b[90m 240 |\u001b[39m       \u001b[32m'a:has-text(\"Login\")'\u001b[39m\u001b[33m,\u001b[39m\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                            "column": 16,
-                            "line": 237
-                          },
-                          "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 235 |\u001b[39m   test(\u001b[32m'9) Login empty submit shows error (if login exists)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 236 |\u001b[39m     \u001b[90m// Try to find login page\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 237 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 238 |\u001b[39m     \n \u001b[90m 239 |\u001b[39m     \u001b[36mconst\u001b[39m loginSelectors \u001b[33m=\u001b[39m [\n \u001b[90m 240 |\u001b[39m       \u001b[32m'a:has-text(\"Login\")'\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:237:16\u001b[22m"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 531,
+                      "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-08-24T11:48:08.714Z",
+                      "startTime": "2025-08-24T15:06:10.871Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-d0b3f-hows-error-if-login-exists--chromium\\test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-d0b3f-hows-error-if-login-exists--chromium\\video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-d0b3f-hows-error-if-login-exists--chromium\\error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                        "column": 16,
-                        "line": 237
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
-              "id": "2c14808d47b386fba9eb-2a1095ee5694ba2c5993",
+              "id": "2c14808d47b386fba9eb-06c7c04b1863e979e950",
               "file": "smoke.spec.js",
-              "line": 235,
-              "column": 3
+              "line": 145,
+              "column": 5
             },
             {
-              "title": "10) Cart persists after refresh (if implemented)",
+              "title": "10) Cart persists after refresh (FAIL)",
               "ok": false,
               "tags": [],
               "tests": [
@@ -757,66 +601,66 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 9,
-                      "parallelIndex": 4,
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
                       "status": "failed",
-                      "duration": 3466,
+                      "duration": 2619,
                       "error": {
-                        "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n",
-                        "stack": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n\n    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:292:16",
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('#cart-persistence-indicator')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  2000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 2000ms\u001b[22m\n\u001b[2m  - waiting for locator('#cart-persistence-indicator')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('#cart-persistence-indicator')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  2000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 2000ms\u001b[22m\n\u001b[2m  - waiting for locator('#cart-persistence-indicator')\u001b[22m\n\n    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:173:67",
                         "location": {
                           "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                          "column": 16,
-                          "line": 292
+                          "column": 67,
+                          "line": 173
                         },
-                        "snippet": "\u001b[0m \u001b[90m 290 |\u001b[39m\n \u001b[90m 291 |\u001b[39m   test(\u001b[32m'10) Cart persists after refresh (if implemented)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 292 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 293 |\u001b[39m     \n \u001b[90m 294 |\u001b[39m     \u001b[90m// Add item to cart first (simplified)\u001b[39m\n \u001b[90m 295 |\u001b[39m     \u001b[36mconst\u001b[39m productSelectors \u001b[33m=\u001b[39m [\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 171 |\u001b[39m         \u001b[90m// Không có cart persistence indicator hay cart item count\u001b[39m\n \u001b[90m 172 |\u001b[39m         \u001b[90m// Đây là tính năng e-commerce nâng cao không có trong microblog demo\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 173 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#cart-persistence-indicator'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 174 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#cart-item-count'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 175 |\u001b[39m         \n \u001b[90m 176 |\u001b[39m         \u001b[90m// Kết quả: FAIL - Chức năng cart persistence không tồn tại trong microblog\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
                             "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                            "column": 16,
-                            "line": 292
+                            "column": 67,
+                            "line": 173
                           },
-                          "message": "Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3000/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 290 |\u001b[39m\n \u001b[90m 291 |\u001b[39m   test(\u001b[32m'10) Cart persists after refresh (if implemented)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 292 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(baseURL)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 293 |\u001b[39m     \n \u001b[90m 294 |\u001b[39m     \u001b[90m// Add item to cart first (simplified)\u001b[39m\n \u001b[90m 295 |\u001b[39m     \u001b[36mconst\u001b[39m productSelectors \u001b[33m=\u001b[39m [\u001b[0m\n\u001b[2m    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:292:16\u001b[22m"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m failed\n\nLocator:  locator('#cart-persistence-indicator')\nExpected: visible\nReceived: <element(s) not found>\nTimeout:  2000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 2000ms\u001b[22m\n\u001b[2m  - waiting for locator('#cart-persistence-indicator')\u001b[22m\n\n\n\u001b[0m \u001b[90m 171 |\u001b[39m         \u001b[90m// Không có cart persistence indicator hay cart item count\u001b[39m\n \u001b[90m 172 |\u001b[39m         \u001b[90m// Đây là tính năng e-commerce nâng cao không có trong microblog demo\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 173 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#cart-persistence-indicator'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 174 |\u001b[39m         \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#cart-item-count'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 175 |\u001b[39m         \n \u001b[90m 176 |\u001b[39m         \u001b[90m// Kết quả: FAIL - Chức năng cart persistence không tồn tại trong microblog\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js:173:67\u001b[22m"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-08-24T11:48:08.716Z",
+                      "startTime": "2025-08-24T15:06:11.014Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-153f6-ter-refresh-if-implemented--chromium\\test-failed-1.png"
+                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---Demo-Microbl-51055-ersists-after-refresh-FAIL--chromium\\test-failed-1.png"
                         },
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-153f6-ter-refresh-if-implemented--chromium\\video.webm"
+                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---Demo-Microbl-51055-ersists-after-refresh-FAIL--chromium\\video.webm"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---vkt-store-UI-153f6-ter-refresh-if-implemented--chromium\\error-context.md"
+                          "path": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\test-results\\smoke-SMOKE---Demo-Microbl-51055-ersists-after-refresh-FAIL--chromium\\error-context.md"
                         }
                       ],
                       "errorLocation": {
                         "file": "D:\\Study\\KiemThuPhanMem\\Smoke-Testing\\playwright_smoke\\tests\\smoke.spec.js",
-                        "column": 16,
-                        "line": 292
+                        "column": 67,
+                        "line": 173
                       }
                     }
                   ],
                   "status": "unexpected"
                 }
               ],
-              "id": "2c14808d47b386fba9eb-bfe11f68a31c55a7abef",
+              "id": "2c14808d47b386fba9eb-097c343b3049293f268a",
               "file": "smoke.spec.js",
-              "line": 291,
-              "column": 3
+              "line": 162,
+              "column": 5
             }
           ]
         }
@@ -825,11 +669,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-08-24T11:47:57.551Z",
-    "duration": 15943.952000000001,
-    "expected": 0,
+    "startTime": "2025-08-24T15:06:06.670Z",
+    "duration": 7255.017999999999,
+    "expected": 4,
     "skipped": 0,
-    "unexpected": 10,
+    "unexpected": 6,
     "flaky": 0
   }
 }

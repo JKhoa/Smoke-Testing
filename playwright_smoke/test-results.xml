@@ -1,392 +1,286 @@
-<testsuites id="" name="" tests="10" failures="10" skipped="0" errors="0" time="15.943952000000001">
-<testsuite name="smoke.spec.js" timestamp="2025-08-24T11:47:57.653Z" hostname="chromium" tests="10" failures="10" skipped="0" time="44.691" errors="0">
-<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 1) Home loads &amp; has title" classname="smoke.spec.js" time="4.425">
-<failure message="smoke.spec.js:6:3 1) Home loads &amp; has title" type="FAILURE">
-<![CDATA[  [chromium] › smoke.spec.js:6:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 1) Home loads & has title 
+<testsuites id="" name="" tests="10" failures="6" skipped="0" errors="0" time="7.255017999999999">
+<testsuite name="smoke.spec.js" timestamp="2025-08-24T15:06:07.762Z" hostname="chromium" tests="10" failures="6" skipped="0" time="23.417" errors="0">
+<testcase name="SMOKE - Demo Microblog UI (6 Fail + 4 Pass Tests) › 1) Home loads &amp; has title (PASS)" classname="smoke.spec.js" time="1.342">
+</testcase>
+<testcase name="SMOKE - Demo Microblog UI (6 Fail + 4 Pass Tests) › 2) Header navigation switches views (FAIL)" classname="smoke.spec.js" time="3.029">
+<failure message="smoke.spec.js:21:5 2) Header navigation switches views (FAIL)" type="FAILURE">
+<![CDATA[  [chromium] › smoke.spec.js:21:5 › SMOKE - Demo Microblog UI (6 Fail + 4 Pass Tests) › 2) Header navigation switches views (FAIL) 
 
-    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  locator('#main-navigation-menu')
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  2000ms
+
     Call log:
-      - navigating to "http://localhost:3000/", waiting until "load"
+      - Expect "toBeVisible" with timeout 2000ms
+      - waiting for locator('#main-navigation-menu')
 
 
-       5 |
-       6 |   test('1) Home loads & has title', async ({ page }) => {
-    >  7 |     await page.goto(baseURL);
-         |                ^
-       8 |     await expect(page).toHaveTitle(/vkt-store|Shop|Home/);
-       9 |     
-      10 |     // Verify essential elements are present
-        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:7:16
+      30 |         // không có menu navigation phức tạp như #main-navigation-menu
+      31 |         // Đây là tính năng nâng cao chưa được implement trong demo
+    > 32 |         await expect(page.locator('#main-navigation-menu')).toBeVisible({ timeout: 2000 });
+         |                                                             ^
+      33 |         
+      34 |         // Kết quả: FAIL - Menu navigation chính không tồn tại trong demo server
+      35 |         // Giải pháp: Cần implement menu navigation hoặc sử dụng selector phù hợp với demo
+        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:32:61
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-00f25-ases-1-Home-loads-has-title-chromium\test-failed-1.png
+    ..\test-results\smoke-SMOKE---Demo-Microbl-c978e-gation-switches-views-FAIL--chromium\test-failed-1.png
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
     attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-00f25-ases-1-Home-loads-has-title-chromium\video.webm
+    ..\test-results\smoke-SMOKE---Demo-Microbl-c978e-gation-switches-views-FAIL--chromium\video.webm
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
-    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-00f25-ases-1-Home-loads-has-title-chromium\error-context.md
+    Error Context: ..\test-results\smoke-SMOKE---Demo-Microbl-c978e-gation-switches-views-FAIL--chromium\error-context.md
 ]]>
 </failure>
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-00f25-ases-1-Home-loads-has-title-chromium\test-failed-1.png]]
+[[ATTACHMENT|test-results\smoke-SMOKE---Demo-Microbl-c978e-gation-switches-views-FAIL--chromium\test-failed-1.png]]
 
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-00f25-ases-1-Home-loads-has-title-chromium\video.webm]]
+[[ATTACHMENT|test-results\smoke-SMOKE---Demo-Microbl-c978e-gation-switches-views-FAIL--chromium\video.webm]]
 
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-00f25-ases-1-Home-loads-has-title-chromium\error-context.md]]
+[[ATTACHMENT|test-results\smoke-SMOKE---Demo-Microbl-c978e-gation-switches-views-FAIL--chromium\error-context.md]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 2) Header navigation switches views" classname="smoke.spec.js" time="4.448">
-<failure message="smoke.spec.js:15:3 2) Header navigation switches views" type="FAILURE">
-<![CDATA[  [chromium] › smoke.spec.js:15:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 2) Header navigation switches views 
+<testcase name="SMOKE - Demo Microblog UI (6 Fail + 4 Pass Tests) › 3) Products render (PASS)" classname="smoke.spec.js" time="1.382">
+</testcase>
+<testcase name="SMOKE - Demo Microblog UI (6 Fail + 4 Pass Tests) › 4) Search filters products (FAIL)" classname="smoke.spec.js" time="3.252">
+<failure message="smoke.spec.js:57:5 4) Search filters products (FAIL)" type="FAILURE">
+<![CDATA[  [chromium] › smoke.spec.js:57:5 › SMOKE - Demo Microblog UI (6 Fail + 4 Pass Tests) › 4) Search filters products (FAIL) 
 
-    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  locator('#search-box')
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  2000ms
+
     Call log:
-      - navigating to "http://localhost:3000/", waiting until "load"
+      - Expect "toBeVisible" with timeout 2000ms
+      - waiting for locator('#search-box')
 
 
-      14 |
-      15 |   test('2) Header navigation switches views', async ({ page }) => {
-    > 16 |     await page.goto(baseURL);
-         |                ^
-      17 |     
-      18 |     // Test navigation links
-      19 |     const navLinks = page.locator('nav a');
-        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:16:16
+      66 |         // Chỉ có các trang cơ bản: home, login, register, explore
+      67 |         // Tính năng search là tính năng nâng cao chưa được implement
+    > 68 |         await expect(page.locator('#search-box')).toBeVisible({ timeout: 2000 });
+         |                                                   ^
+      69 |         await expect(page.locator('#search-results')).toBeVisible({ timeout: 2000 });
+      70 |         
+      71 |         // Kết quả: FAIL - Chức năng search không tồn tại trong demo server
+        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:68:51
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-4fe70-r-navigation-switches-views-chromium\test-failed-1.png
+    ..\test-results\smoke-SMOKE---Demo-Microbl-d1098-arch-filters-products-FAIL--chromium\test-failed-1.png
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
     attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-4fe70-r-navigation-switches-views-chromium\video.webm
+    ..\test-results\smoke-SMOKE---Demo-Microbl-d1098-arch-filters-products-FAIL--chromium\video.webm
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
-    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-4fe70-r-navigation-switches-views-chromium\error-context.md
+    Error Context: ..\test-results\smoke-SMOKE---Demo-Microbl-d1098-arch-filters-products-FAIL--chromium\error-context.md
 ]]>
 </failure>
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-4fe70-r-navigation-switches-views-chromium\test-failed-1.png]]
+[[ATTACHMENT|test-results\smoke-SMOKE---Demo-Microbl-d1098-arch-filters-products-FAIL--chromium\test-failed-1.png]]
 
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-4fe70-r-navigation-switches-views-chromium\video.webm]]
+[[ATTACHMENT|test-results\smoke-SMOKE---Demo-Microbl-d1098-arch-filters-products-FAIL--chromium\video.webm]]
 
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-4fe70-r-navigation-switches-views-chromium\error-context.md]]
+[[ATTACHMENT|test-results\smoke-SMOKE---Demo-Microbl-d1098-arch-filters-products-FAIL--chromium\error-context.md]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 3) Products render (tolerant selectors)" classname="smoke.spec.js" time="5.182">
-<failure message="smoke.spec.js:35:3 3) Products render (tolerant selectors)" type="FAILURE">
-<![CDATA[  [chromium] › smoke.spec.js:35:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 3) Products render (tolerant selectors) 
+<testcase name="SMOKE - Demo Microblog UI (6 Fail + 4 Pass Tests) › 5) Category filter works (PASS)" classname="smoke.spec.js" time="1.452">
+</testcase>
+<testcase name="SMOKE - Demo Microblog UI (6 Fail + 4 Pass Tests) › 6) Add to cart -&gt; appears in cart (FAIL)" classname="smoke.spec.js" time="3.273">
+<failure message="smoke.spec.js:91:5 6) Add to cart -&gt; appears in cart (FAIL)" type="FAILURE">
+<![CDATA[  [chromium] › smoke.spec.js:91:5 › SMOKE - Demo Microblog UI (6 Fail + 4 Pass Tests) › 6) Add to cart -> appears in cart (FAIL) 
 
-    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/products
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  locator('#add-to-cart-button')
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  2000ms
+
     Call log:
-      - navigating to "http://localhost:3000/products", waiting until "load"
+      - Expect "toBeVisible" with timeout 2000ms
+      - waiting for locator('#add-to-cart-button')
 
 
-      34 |
-      35 |   test('3) Products render (tolerant selectors)', async ({ page }) => {
-    > 36 |     await page.goto(baseURL + '/products');
-         |                ^
-      37 |     
-      38 |     // Wait for products to load with tolerant selectors
-      39 |     await page.waitForSelector('[data-testid="product"], .product, .product-card, .item', { timeout: 10000 });
-        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:36:16
+      100 |         // Không có chức năng shopping cart, chỉ có chức năng tạo posts
+      101 |         // Đây là tính năng của ứng dụng khác (e-commerce) không có trong microblog
+    > 102 |         await expect(page.locator('#add-to-cart-button')).toBeVisible({ timeout: 2000 });
+          |                                                           ^
+      103 |         await expect(page.locator('#cart-icon')).toBeVisible({ timeout: 2000 });
+      104 |         
+      105 |         // Kết quả: FAIL - Chức năng shopping cart không tồn tại trong microblog demo
+        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:102:59
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-5d5fa--render-tolerant-selectors--chromium\test-failed-1.png
+    ..\test-results\smoke-SMOKE---Demo-Microbl-015e4-art---appears-in-cart-FAIL--chromium\test-failed-1.png
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
     attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-5d5fa--render-tolerant-selectors--chromium\video.webm
+    ..\test-results\smoke-SMOKE---Demo-Microbl-015e4-art---appears-in-cart-FAIL--chromium\video.webm
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
-    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-5d5fa--render-tolerant-selectors--chromium\error-context.md
+    Error Context: ..\test-results\smoke-SMOKE---Demo-Microbl-015e4-art---appears-in-cart-FAIL--chromium\error-context.md
 ]]>
 </failure>
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-5d5fa--render-tolerant-selectors--chromium\test-failed-1.png]]
+[[ATTACHMENT|test-results\smoke-SMOKE---Demo-Microbl-015e4-art---appears-in-cart-FAIL--chromium\test-failed-1.png]]
 
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-5d5fa--render-tolerant-selectors--chromium\video.webm]]
+[[ATTACHMENT|test-results\smoke-SMOKE---Demo-Microbl-015e4-art---appears-in-cart-FAIL--chromium\video.webm]]
 
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-5d5fa--render-tolerant-selectors--chromium\error-context.md]]
+[[ATTACHMENT|test-results\smoke-SMOKE---Demo-Microbl-015e4-art---appears-in-cart-FAIL--chromium\error-context.md]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 4) Search filters products (if present)" classname="smoke.spec.js" time="4.712">
-<failure message="smoke.spec.js:50:3 4) Search filters products (if present)" type="FAILURE">
-<![CDATA[  [chromium] › smoke.spec.js:50:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 4) Search filters products (if present) 
+<testcase name="SMOKE - Demo Microblog UI (6 Fail + 4 Pass Tests) › 7) Quantity change updates total (FAIL)" classname="smoke.spec.js" time="3.064">
+<failure message="smoke.spec.js:109:5 7) Quantity change updates total (FAIL)" type="FAILURE">
+<![CDATA[  [chromium] › smoke.spec.js:109:5 › SMOKE - Demo Microblog UI (6 Fail + 4 Pass Tests) › 7) Quantity change updates total (FAIL) 
 
-    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  locator('#quantity-selector')
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  2000ms
+
     Call log:
-      - navigating to "http://localhost:3000/", waiting until "load"
+      - Expect "toBeVisible" with timeout 2000ms
+      - waiting for locator('#quantity-selector')
 
 
-      49 |
-      50 |   test('4) Search filters products (if present)', async ({ page }) => {
-    > 51 |     await page.goto(baseURL);
-         |                ^
-      52 |     
-      53 |     // Look for search input with various possible selectors
-      54 |     const searchSelectors = [
-        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:51:16
+      119 |         // Tính năng quantity selector chỉ có trong ứng dụng shopping, không có trong microblog
+      120 |         await expect(page.locator('body')).toBeVisible();
+    > 121 |         await expect(page.locator('#quantity-selector')).toBeVisible({ timeout: 2000 });
+          |                                                          ^
+      122 |         
+      123 |         // Kết quả: FAIL - Trang cart không tồn tại (404), quantity selector không có
+      124 |         // Giải pháp: Cần implement trang cart hoặc thay đổi test case phù hợp với microblog
+        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:121:58
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-2cf19-ilters-products-if-present--chromium\test-failed-1.png
+    ..\test-results\smoke-SMOKE---Demo-Microbl-bbba6--change-updates-total-FAIL--chromium\test-failed-1.png
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
     attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-2cf19-ilters-products-if-present--chromium\video.webm
+    ..\test-results\smoke-SMOKE---Demo-Microbl-bbba6--change-updates-total-FAIL--chromium\video.webm
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
-    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-2cf19-ilters-products-if-present--chromium\error-context.md
+    Error Context: ..\test-results\smoke-SMOKE---Demo-Microbl-bbba6--change-updates-total-FAIL--chromium\error-context.md
 ]]>
 </failure>
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-2cf19-ilters-products-if-present--chromium\test-failed-1.png]]
+[[ATTACHMENT|test-results\smoke-SMOKE---Demo-Microbl-bbba6--change-updates-total-FAIL--chromium\test-failed-1.png]]
 
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-2cf19-ilters-products-if-present--chromium\video.webm]]
+[[ATTACHMENT|test-results\smoke-SMOKE---Demo-Microbl-bbba6--change-updates-total-FAIL--chromium\video.webm]]
 
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-2cf19-ilters-products-if-present--chromium\error-context.md]]
+[[ATTACHMENT|test-results\smoke-SMOKE---Demo-Microbl-bbba6--change-updates-total-FAIL--chromium\error-context.md]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 5) Category filter works (if present)" classname="smoke.spec.js" time="4.631">
-<failure message="smoke.spec.js:81:3 5) Category filter works (if present)" type="FAILURE">
-<![CDATA[  [chromium] › smoke.spec.js:81:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 5) Category filter works (if present) 
+<testcase name="SMOKE - Demo Microblog UI (6 Fail + 4 Pass Tests) › 8) Remove item from cart (FAIL)" classname="smoke.spec.js" time="3.473">
+<failure message="smoke.spec.js:127:5 8) Remove item from cart (FAIL)" type="FAILURE">
+<![CDATA[  [chromium] › smoke.spec.js:127:5 › SMOKE - Demo Microblog UI (6 Fail + 4 Pass Tests) › 8) Remove item from cart (FAIL) 
 
-    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  locator('#remove-item-button')
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  2000ms
+
     Call log:
-      - navigating to "http://localhost:3000/", waiting until "load"
+      - Expect "toBeVisible" with timeout 2000ms
+      - waiting for locator('#remove-item-button')
 
 
-      80 |
-      81 |   test('5) Category filter works (if present)', async ({ page }) => {
-    > 82 |     await page.goto(baseURL);
-         |                ^
-      83 |     
-      84 |     // Look for category filters
-      85 |     const categorySelectors = [
-        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:82:16
+      136 |         // Không có nút remove item hay thông báo cart empty
+      137 |         // Đây là tính năng e-commerce không có trong microblog
+    > 138 |         await expect(page.locator('#remove-item-button')).toBeVisible({ timeout: 2000 });
+          |                                                           ^
+      139 |         await expect(page.locator('#cart-empty-message')).toBeVisible({ timeout: 2000 });
+      140 |         
+      141 |         // Kết quả: FAIL - Chức năng remove item không tồn tại trong microblog
+        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:138:59
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-ce211-ry-filter-works-if-present--chromium\test-failed-1.png
+    ..\test-results\smoke-SMOKE---Demo-Microbl-6b685-Remove-item-from-cart-FAIL--chromium\test-failed-1.png
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
     attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-ce211-ry-filter-works-if-present--chromium\video.webm
+    ..\test-results\smoke-SMOKE---Demo-Microbl-6b685-Remove-item-from-cart-FAIL--chromium\video.webm
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
-    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-ce211-ry-filter-works-if-present--chromium\error-context.md
+    Error Context: ..\test-results\smoke-SMOKE---Demo-Microbl-6b685-Remove-item-from-cart-FAIL--chromium\error-context.md
 ]]>
 </failure>
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-ce211-ry-filter-works-if-present--chromium\test-failed-1.png]]
+[[ATTACHMENT|test-results\smoke-SMOKE---Demo-Microbl-6b685-Remove-item-from-cart-FAIL--chromium\test-failed-1.png]]
 
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-ce211-ry-filter-works-if-present--chromium\video.webm]]
+[[ATTACHMENT|test-results\smoke-SMOKE---Demo-Microbl-6b685-Remove-item-from-cart-FAIL--chromium\video.webm]]
 
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-ce211-ry-filter-works-if-present--chromium\error-context.md]]
+[[ATTACHMENT|test-results\smoke-SMOKE---Demo-Microbl-6b685-Remove-item-from-cart-FAIL--chromium\error-context.md]]
 ]]>
 </system-out>
 </testcase>
-<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 6) Add to cart -&gt; appears in cart" classname="smoke.spec.js" time="4.762">
-<failure message="smoke.spec.js:113:3 6) Add to cart -&gt; appears in cart" type="FAILURE">
-<![CDATA[  [chromium] › smoke.spec.js:113:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 6) Add to cart -> appears in cart 
-
-    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
-    Call log:
-      - navigating to "http://localhost:3000/", waiting until "load"
-
-
-      112 |
-      113 |   test('6) Add to cart -> appears in cart', async ({ page }) => {
-    > 114 |     await page.goto(baseURL);
-          |                ^
-      115 |     
-      116 |     // Find and click on a product
-      117 |     const productSelectors = [
-        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:114:16
-
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-a6f6f-d-to-cart---appears-in-cart-chromium\test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-a6f6f-d-to-cart---appears-in-cart-chromium\video.webm
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-a6f6f-d-to-cart---appears-in-cart-chromium\error-context.md
-]]>
-</failure>
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-a6f6f-d-to-cart---appears-in-cart-chromium\test-failed-1.png]]
-
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-a6f6f-d-to-cart---appears-in-cart-chromium\video.webm]]
-
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-a6f6f-d-to-cart---appears-in-cart-chromium\error-context.md]]
-]]>
-</system-out>
+<testcase name="SMOKE - Demo Microblog UI (6 Fail + 4 Pass Tests) › 9) Login empty submit shows error (PASS)" classname="smoke.spec.js" time="0.531">
 </testcase>
-<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 7) Quantity change updates total (if controls exist)" classname="smoke.spec.js" time="5.009">
-<failure message="smoke.spec.js:167:3 7) Quantity change updates total (if controls exist)" type="FAILURE">
-<![CDATA[  [chromium] › smoke.spec.js:167:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 7) Quantity change updates total (if controls exist) 
+<testcase name="SMOKE - Demo Microblog UI (6 Fail + 4 Pass Tests) › 10) Cart persists after refresh (FAIL)" classname="smoke.spec.js" time="2.619">
+<failure message="smoke.spec.js:162:5 10) Cart persists after refresh (FAIL)" type="FAILURE">
+<![CDATA[  [chromium] › smoke.spec.js:162:5 › SMOKE - Demo Microblog UI (6 Fail + 4 Pass Tests) › 10) Cart persists after refresh (FAIL) 
 
-    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/cart
+    Error: expect(locator).toBeVisible() failed
+
+    Locator:  locator('#cart-persistence-indicator')
+    Expected: visible
+    Received: <element(s) not found>
+    Timeout:  2000ms
+
     Call log:
-      - navigating to "http://localhost:3000/cart", waiting until "load"
+      - Expect "toBeVisible" with timeout 2000ms
+      - waiting for locator('#cart-persistence-indicator')
 
 
-      166 |
-      167 |   test('7) Quantity change updates total (if controls exist)', async ({ page }) => {
-    > 168 |     await page.goto(baseURL + '/cart');
-          |                ^
-      169 |     
-      170 |     // Look for quantity controls
-      171 |     const quantitySelectors = [
-        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:168:16
+      171 |         // Không có cart persistence indicator hay cart item count
+      172 |         // Đây là tính năng e-commerce nâng cao không có trong microblog demo
+    > 173 |         await expect(page.locator('#cart-persistence-indicator')).toBeVisible({ timeout: 2000 });
+          |                                                                   ^
+      174 |         await expect(page.locator('#cart-item-count')).toBeVisible({ timeout: 2000 });
+      175 |         
+      176 |         // Kết quả: FAIL - Chức năng cart persistence không tồn tại trong microblog
+        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:173:67
 
     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-074b7-es-total-if-controls-exist--chromium\test-failed-1.png
+    ..\test-results\smoke-SMOKE---Demo-Microbl-51055-ersists-after-refresh-FAIL--chromium\test-failed-1.png
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
     attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-074b7-es-total-if-controls-exist--chromium\video.webm
+    ..\test-results\smoke-SMOKE---Demo-Microbl-51055-ersists-after-refresh-FAIL--chromium\video.webm
     ────────────────────────────────────────────────────────────────────────────────────────────────
 
-    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-074b7-es-total-if-controls-exist--chromium\error-context.md
+    Error Context: ..\test-results\smoke-SMOKE---Demo-Microbl-51055-ersists-after-refresh-FAIL--chromium\error-context.md
 ]]>
 </failure>
 <system-out>
 <![CDATA[
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-074b7-es-total-if-controls-exist--chromium\test-failed-1.png]]
+[[ATTACHMENT|test-results\smoke-SMOKE---Demo-Microbl-51055-ersists-after-refresh-FAIL--chromium\test-failed-1.png]]
 
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-074b7-es-total-if-controls-exist--chromium\video.webm]]
+[[ATTACHMENT|test-results\smoke-SMOKE---Demo-Microbl-51055-ersists-after-refresh-FAIL--chromium\video.webm]]
 
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-074b7-es-total-if-controls-exist--chromium\error-context.md]]
-]]>
-</system-out>
-</testcase>
-<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 8) Remove item from cart (if supported)" classname="smoke.spec.js" time="4.743">
-<failure message="smoke.spec.js:208:3 8) Remove item from cart (if supported)" type="FAILURE">
-<![CDATA[  [chromium] › smoke.spec.js:208:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 8) Remove item from cart (if supported) 
-
-    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/cart
-    Call log:
-      - navigating to "http://localhost:3000/cart", waiting until "load"
-
-
-      207 |
-      208 |   test('8) Remove item from cart (if supported)', async ({ page }) => {
-    > 209 |     await page.goto(baseURL + '/cart');
-          |                ^
-      210 |     
-      211 |     // Look for remove buttons
-      212 |     const removeSelectors = [
-        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:209:16
-
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-3518d-tem-from-cart-if-supported--chromium\test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-3518d-tem-from-cart-if-supported--chromium\video.webm
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-3518d-tem-from-cart-if-supported--chromium\error-context.md
-]]>
-</failure>
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-3518d-tem-from-cart-if-supported--chromium\test-failed-1.png]]
-
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-3518d-tem-from-cart-if-supported--chromium\video.webm]]
-
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-3518d-tem-from-cart-if-supported--chromium\error-context.md]]
-]]>
-</system-out>
-</testcase>
-<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 9) Login empty submit shows error (if login exists)" classname="smoke.spec.js" time="3.313">
-<failure message="smoke.spec.js:235:3 9) Login empty submit shows error (if login exists)" type="FAILURE">
-<![CDATA[  [chromium] › smoke.spec.js:235:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 9) Login empty submit shows error (if login exists) 
-
-    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
-    Call log:
-      - navigating to "http://localhost:3000/", waiting until "load"
-
-
-      235 |   test('9) Login empty submit shows error (if login exists)', async ({ page }) => {
-      236 |     // Try to find login page
-    > 237 |     await page.goto(baseURL);
-          |                ^
-      238 |     
-      239 |     const loginSelectors = [
-      240 |       'a:has-text("Login")',
-        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:237:16
-
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-d0b3f-hows-error-if-login-exists--chromium\test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-d0b3f-hows-error-if-login-exists--chromium\video.webm
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-d0b3f-hows-error-if-login-exists--chromium\error-context.md
-]]>
-</failure>
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-d0b3f-hows-error-if-login-exists--chromium\test-failed-1.png]]
-
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-d0b3f-hows-error-if-login-exists--chromium\video.webm]]
-
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-d0b3f-hows-error-if-login-exists--chromium\error-context.md]]
-]]>
-</system-out>
-</testcase>
-<testcase name="SMOKE - vkt-store UI on KTPM arch (10 cases) › 10) Cart persists after refresh (if implemented)" classname="smoke.spec.js" time="3.466">
-<failure message="smoke.spec.js:291:3 10) Cart persists after refresh (if implemented)" type="FAILURE">
-<![CDATA[  [chromium] › smoke.spec.js:291:3 › SMOKE - vkt-store UI on KTPM arch (10 cases) › 10) Cart persists after refresh (if implemented) 
-
-    Error: page.goto: net::ERR_CONNECTION_REFUSED at http://localhost:3000/
-    Call log:
-      - navigating to "http://localhost:3000/", waiting until "load"
-
-
-      290 |
-      291 |   test('10) Cart persists after refresh (if implemented)', async ({ page }) => {
-    > 292 |     await page.goto(baseURL);
-          |                ^
-      293 |     
-      294 |     // Add item to cart first (simplified)
-      295 |     const productSelectors = [
-        at D:\Study\KiemThuPhanMem\Smoke-Testing\playwright_smoke\tests\smoke.spec.js:292:16
-
-    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-153f6-ter-refresh-if-implemented--chromium\test-failed-1.png
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
-    ..\test-results\smoke-SMOKE---vkt-store-UI-153f6-ter-refresh-if-implemented--chromium\video.webm
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-
-    Error Context: ..\test-results\smoke-SMOKE---vkt-store-UI-153f6-ter-refresh-if-implemented--chromium\error-context.md
-]]>
-</failure>
-<system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-153f6-ter-refresh-if-implemented--chromium\test-failed-1.png]]
-
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-153f6-ter-refresh-if-implemented--chromium\video.webm]]
-
-[[ATTACHMENT|test-results\smoke-SMOKE---vkt-store-UI-153f6-ter-refresh-if-implemented--chromium\error-context.md]]
+[[ATTACHMENT|test-results\smoke-SMOKE---Demo-Microbl-51055-ersists-after-refresh-FAIL--chromium\error-context.md]]
 ]]>
 </system-out>
 </testcase>

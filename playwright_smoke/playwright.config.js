@@ -21,9 +21,9 @@ module.exports = defineConfig({
         ['junit', { outputFile: 'test-results.xml' }]
     ],
     /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-        use: {
-            /* Base URL (allow override by environment variable) */
-            baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:5000',
+    use: {
+        /* Base URL (allow override by environment variable) */
+        baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:5000',
 
         /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
         trace: 'on-first-retry',
@@ -65,8 +65,8 @@ module.exports = defineConfig({
 
     /* Run your local dev server before starting the tests */
     webServer: {
-      command: 'python ../demo_server.py',
-      url: 'http://localhost:5000',
-      reuseExistingServer: !process.env.CI,
+        command: 'python ../demo_server.py',
+        url: 'http://localhost:5000',
+        reuseExistingServer: !process.env.CI,
     },
 });
